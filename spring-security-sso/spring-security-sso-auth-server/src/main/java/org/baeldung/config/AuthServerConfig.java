@@ -26,9 +26,9 @@ public class AuthServerConfig extends AuthorizationServerConfigurerAdapter {
         clients.inMemory()
             .withClient("SampleClientId")
             .secret("secret")
-            .authorizedGrantTypes("authorization_code")
+            .authorizedGrantTypes("authorization_code","client_credentials","refresh_token","password","implicit")
             .scopes("user_info")
-            .autoApprove(true)
+            .autoApprove(false)
         // .accessTokenValiditySeconds(3600)
         ; // 1 hour
     }
